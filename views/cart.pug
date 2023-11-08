@@ -1,0 +1,28 @@
+extends base
+
+block append head
+  link(rel='stylesheet' href='/css/style.css')
+  script(src='/js/cart.js')
+
+block content
+  if cartData.length === 0
+    h1.trend-2 Your cart is empty
+  else
+    section#product1.section-p1
+      .trend-items
+        .products-title
+          h1.trend-1 SHOPPING CART
+          h2.trend-2 OUR SHOPPING CART
+        .products-container
+          each prd in cartData
+            .pro
+              img(src=`${prd.productId[0].image}`)
+              .des
+                .des
+                  h5= prd.productId[0].name
+                  h4= prd.productId[0].price
+                i.fa.fa-shopping-cart.cart
+
+//- 
+//- span= product.userId
+//- span= product.category

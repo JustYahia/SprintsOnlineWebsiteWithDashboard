@@ -1,0 +1,32 @@
+extends base
+
+block append head 
+    link(rel="stylesheet" href="/css/login.css")
+
+block content
+
+    .container
+        main
+            form.login-form#login-form
+                p.side-p.main-h1 Luxuria
+                h1.main-h1 Login
+                .form-field
+                    input#email(maxlength="18" required="" placeholder="E-mail" type="email")
+                    i.fa-solid.fa-signature
+                .form-field
+                    input#password(required="" placeholder="Password" type="password")
+                    i.fa-solid.fa-lock
+                .forget-password
+                    p Forget Password?
+                .forget-password
+                    a.link-tag(href="/signup")  sign up now!
+                div
+                    button.btn Login
+                .loginMeth
+                    p.login-methods Login Via Social Media
+                    .icons-login
+                        i.fa-brands.fa-facebook
+                        i.fa-brands.fa-google
+                
+    
+    include _footer
